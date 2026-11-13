@@ -18,6 +18,7 @@ jobs:
         with:
           node-version: '22'
           cache: npm
-      - run: npm ci --ignore-scripts --omit=optional
+      - run: npm ci --ignore-scripts --include=optional
+      - run: npm rebuild better-sqlite3
       - run: npm test
       - run: node examples/local-run.mjs
