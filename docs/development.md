@@ -19,7 +19,7 @@ node examples/local-run.mjs
 
 Choose further checks for the changed code and the behavior it affects. The retained tests include direct and council cancellation, permission rendezvous, per-turn memory, protected-context admission, provider failure/refusal, role and topology composition, and runtime contracts. Tests with fake providers establish those local control paths; they do not establish a live model route or model quality.
 
-The hosted engine check runs `npm test` and the in-memory SDK example on Node 22 after installing the lockfile with dependency scripts and optional dependencies omitted. This verifies the selected JavaScript paths without building native database bindings or the optional Rust persona component. Those components and live provider routes need their own installation-specific checks.
+The hosted engine check installs the lockfile on Node 22 with `npm ci --ignore-scripts --include=optional`, then prepares the selected SQLite binding with `npm rebuild better-sqlite3`. Optional platform packages include the Rollup loader used by Vitest, and the continuity tests exercise real SQLite telemetry. Other dependency lifecycle scripts remain disabled. The workflow runs `npm test` and the in-memory SDK example; the optional Rust persona component and live provider routes need their own installation-specific checks.
 
 To use MCP or ACP, launch the corresponding entry point from the selected source or installed package:
 
