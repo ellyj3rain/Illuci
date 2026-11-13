@@ -1,0 +1,62 @@
+{
+  "$schema": "illuci.governance.invariant-manifest/1",
+  "$comment": "Machine-seeded registry of files that IMPLEMENT a governance invariant. The day-one-staleness fix: instead of a hand-authored list that drifts, this file is seeded by manifest.js's scan and is the completeness oracle the author-time gate compares the working tree against (see findUnmanifestedImplementers). When a new file starts redefining a cap without being listed here, that is the signal an invariant grew a second uncoordinated home. Downstream context mirrors are not implementers by location. Paths are repo-root-relative, forward-slash, sorted.",
+  "invariants": {
+    "odometer": {
+      "$comment": "Illuci's four-coordinate root odometer caps (MINOR_HARD_CAP=12, KOHAI_HARD_CAP=16, PATCH_HARD_CAP=24). A file implements this invariant if it redefines a hard-cap constant or imports the odometer bump skill. assess.js is the single tested source; bump.mjs is the mechanical CLI that mirrors inherited caps where available.",
+      "signal": "redefines MINOR_HARD_CAP / KOHAI_HARD_CAP / PATCH_HARD_CAP, or imports the odometer skill",
+      "files": [
+        "claude/system/skills/artifact-standards/odometer/bump.mjs",
+        "illuci/core/governance/assess.js"
+      ]
+    },
+    "operator-mediated-execution": {
+      "$comment": "Operator-mediated execution adherence per constitutional/02. The most common drift the doc names is 'continuing past a decision point silently' - locking a naming/structural decision or listing options as already-ratified without an operator pause. A file implements this invariant if it scans governance-grade text surfaces for unilateral lock-language. Intrinsically a judgment, so warn-tier: the atom proposes (routes to the operator's channel), it never blocks. The ceiling rule holds the heuristic; the floor module is the thin warn-tier presence that delegates to it.",
+      "signal": "scans governance-grade surfaces for unratified-lock language and routes to the operator (warn-tier)",
+      "files": [
+        "illuci/core/governance/authortime/ceiling/operator-pause.js",
+        "illuci/core/governance/authortime/operator-pause.js"
+      ]
+    },
+    "dual-tz-timestamp": {
+      "$comment": "Dual-TZ timestamp format discipline (CLAUDE.md Timekeeping; the timekeeper skill standard; constitutional doc header rows). Every formal-artifact header Timestamp field uses the inline dual-TZ form 'YYYY-MM-DD HH:MM UTC / HH:MM PST|PDT'. The FLOOR atom (dual-tz-timestamp.js) validates that format and BLOCKS a newly-introduced single-zone / malformed timestamp - complementing header.js, which checks header PRESENCE only, not field validity. The ceiling rule (ceiling/timestamp-currency.js) is the advisory complement: it flags a substantively-changed artifact whose header Timestamp did not move (a likely-stale header). Both are pure + clock-free (they validate FORMAT / judge CURRENCY, never compare to 'now').",
+      "signal": "validates or judges the inline dual-TZ header Timestamp form",
+      "files": [
+        "illuci/core/governance/authortime/ceiling/timestamp-currency.js",
+        "illuci/core/governance/authortime/dual-tz-timestamp.js"
+      ]
+    },
+    "attribution": {
+      "$comment": "Attribution-conventions adherence at commit scope. Standard 15 keeps Git/GitHub authorship on the human operator: a commit carries no model-named Co-Authored-By trailer, no required model or cast trailer, and no claim that a model or harness is the Git author. Cast/persona/model/harness provenance belongs in ledgers, runtime records, and explanatory prose when relevant. cast-trailer.js is the warn-tier floor atom over the message; ceiling/cast-trailer.js is the attended advisory counterpart. Both read the commit MESSAGE and are pure + clock-free.",
+      "signal": "implements the model-Co-Authored-By attribution grammar (the floor atom or its ceiling rule)",
+      "files": [
+        "illuci/core/governance/authortime/cast-trailer.js",
+        "illuci/core/governance/authortime/ceiling/cast-trailer.js"
+      ]
+    },
+    "doc-pack-completeness": {
+      "$comment": "The GZS doc-pack floor (per constitutional/04 'Document set - the canonical 9' + GOVERNANCE.md's Hub-and-Spoke Memory Boundary). A GZS-managed root must carry the canonical 9 + root VERSION; a deletion that drops a member below the floor is the failure caught. A file implements this invariant if it redefines the CANONICAL_PACK constant or checks doc-pack membership. doc-pack.js is the floor atom (the unattended gate; absolute checkDocPackComplete + change-scoped checkDocPackPreserved); ceiling/doc-pack-shape.js is the advisory tier-judgment complement (a removed member is DOCTRINE and halts to the operator).",
+      "signal": "redefines CANONICAL_PACK / checks GZS doc-pack membership (the floor atom or its ceiling rule)",
+      "files": [
+        "illuci/core/governance/authortime/ceiling/doc-pack-shape.js",
+        "illuci/core/governance/authortime/doc-pack.js"
+      ]
+    },
+    "cross-spoke-import": {
+      "$comment": "The hub-and-spoke memory boundary at IMPORT scope (GOVERNANCE.md 'Cross-spoke imports must cite a DR via in-line comment'; ARCHITECTURE.md 'Spoke-to-spoke: cross-consumption contracts'; DR-045). An import that crosses a spoke boundary (claude / illuci / constitutional / primitives) must cite a DR ID on the same or immediately-preceding line; the in-line DR is the explicit named contract the topology requires. A file implements this invariant if it carries the cross-spoke import classifier (the longest-prefix spoke map + the two import regexes + the DR_RE citation check). cross-spoke-dr-citation.js is the floor atom (pure per-file pass/fail over a changed source file's proposed content, atomizing claude/system/scripts/check-cross-spoke-imports.mjs from a whole-tree CI walk into a content-diff changeset atom); ceiling/cross-spoke-reach.js is the ceiling rule (scores a cited edge CONTRACT / an uncited edge DOCTRINE, the per-file producer of elevation.js's Amendment-5 un-DR'd-edge findings). Both are pure + clock-free, and the SPOKES map is a param.",
+      "signal": "implements the cross-spoke import DR-citation classifier (the floor atom or its ceiling rule)",
+      "files": [
+        "illuci/core/governance/authortime/ceiling/cross-spoke-reach.js",
+        "illuci/core/governance/authortime/cross-spoke-dr-citation.js"
+      ]
+    },
+    "batch-prefix": {
+      "$comment": "Batch-prefix commit discipline at commit scope (GOVERNANCE.md Commit Standards 'Batch prefix [A1], [B2]; Hotfix prefix [HOTFIX]'; constitutional/04 Commit standards). The commit-scope half of batch-and-version discipline: every commit subject opens with a batch id ([A1], [A128], sub-batch [B2.3], harden [A20.1.0]) or the [HOTFIX] marker - the single most-violated convention when an agent commits ungoverned, and invisible to the content-diff atoms because none of them see the commit message. A file implements this invariant if it carries the batch-prefix subject grammar (BATCH_RE / HOTFIX_RE). batch-prefix.js is the floor atom (pure checkBatchPrefix over the subject line, block-tier: absent/malformed prefix stops the commit, inert when no message is supplied); ceiling/batch-coherence.js is the advisory complement (a well-formed prefix that is the WRONG batch for the ledger's open batch - right-but-valid vs wrong-but-valid). Both are pure + clock-free; the prefix grammar is the only authority, the message body is never trusted for anything else.",
+      "signal": "implements the batch-prefix subject grammar (BATCH_RE / HOTFIX_RE) - the floor atom or its ceiling rule",
+      "files": [
+        "illuci/core/governance/authortime/batch-prefix.js",
+        "illuci/core/governance/authortime/ceiling/batch-coherence.js"
+      ]
+    }
+  }
+}

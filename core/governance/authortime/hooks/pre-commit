@@ -1,0 +1,34 @@
+#!/bin/sh
+# GZDS author-time FLOOR pre-commit hook.
+#
+# TIER SCOPE — this hook runs the FLOOR ONLY.
+#   The author-time governance has two tiers, and they have opposite safety profiles:
+#     - FLOOR (this hook): the deterministic atoms (version-gate, append-only, header,
+#       source hygiene). Each is a pure pass/fail decision with no human in the loop, so it
+#       is SAFE TO RUN UNATTENDED on every commit. That is exactly what a git hook is.
+#     - CEILING / operator-gate / halt tier: the relational, consumption-graph-aware
+#       governance (how governance-grade a change to a spoke is). That tier is
+#       ATTENDED-ONLY — it surfaces a deliberation to the operator and must not auto-halt
+#       a commit from inside a hook. It is therefore deliberately NOT invoked here.
+#   This hook calls floor-check-cli.mjs, which is floor-only by construction.
+#
+# BEHAVIOR
+#   Resolves the repo root from git, runs the floor CLI against it, and exits with the
+#   CLI's exit code (0 = clean, 1 = a block-tier floor violation). Warnings print but do
+#   not fail the commit (the CLI classifies them).
+#
+# OVERRIDE
+#   GZDS_OVERRIDE is passed through to the CLI (an audited operator override channel).
+#   This hook never interprets it — it only forwards it — so the override policy lives in
+#   one place (the floor layer), not split across the hook.
+#
+# INSTALL
+#   Armed by install-hooks.mjs --arm (sets core.hooksPath to this hooks dir). Without
+#   --arm the installer is a dry run and changes nothing.
+
+REPO_ROOT=$(git rev-parse --show-toplevel)
+HOOK_DIR=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+
+GZDS_OVERRIDE="${GZDS_OVERRIDE:-}" \
+  node "$HOOK_DIR/../floor-check-cli.mjs" "$REPO_ROOT"
+exit $?

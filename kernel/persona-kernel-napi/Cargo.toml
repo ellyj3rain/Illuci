@@ -1,0 +1,19 @@
+[package]
+name = "persona-kernel-napi"
+version = "0.1.0"
+edition = "2021"
+publish = false
+description = "illuci persona kernel — Tier-1 node addon (ADR-07): seedFromPreset + renderDirective over LE byte blobs (ADR-02). Confound guard (ADR-01) applies: no domain/facet string literal in src."
+
+[lib]
+name = "persona_kernel_napi"
+crate-type = ["cdylib"]
+path = "src/lib.rs"
+
+[dependencies]
+napi = "2"
+napi-derive = "2"
+persona-kernel = { path = "../persona-kernel" }
+
+[build-dependencies]
+napi-build = "2"

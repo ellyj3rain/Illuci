@@ -1,0 +1,7 @@
+# Rust build output. CI builds out-of-tree via CARGO_TARGET_DIR (MAX_PATH on
+# Windows); ignore any local workspace target/. Cargo.lock IS tracked (the
+# workspace has a binary/addon lineage; reproducibility per ADR-02).
+/target
+
+# Built napi addon (local artifact; the loader is optional-load, CI is node-only).
+*.node

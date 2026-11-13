@@ -1,0 +1,20 @@
+{
+  "charterId": "dev-team",
+  "kind": "fixed",
+  "lineup": {
+    "reviewer": 1
+  },
+  "personas": {
+    "reviewer": {
+      "agentSlug": "warden-auditor",
+      "skills": ["security-audit", "warden"],
+      "modelResource": "claude.sonnet.medium",
+      "_note": "agentSlug 'warden-auditor' is a working name (operator-ratifiable). The persona binds the capability half (security-audit, which carries the gated snyk-cli bridge) to the disposition half (warden methodology skill). modelResource is additive and does not perturb identity, which is keyed on agentSlug."
+    }
+  },
+  "fireControl": {},
+  "anchor": {
+    "mode": "operator"
+  },
+  "_rationale": "charterId 'dev-team' chosen because its 'reviewer' seat is a real seat id and is reviewer-style, which is the natural home for a warden-dispositioned security auditor. kind is 'fixed' to keep the slice minimal and reproducible. anchor.mode is 'operator' so the operator ratifies the gated snyk-cli bridge grant. lineup binds only the reviewer seat, keeping the slice vertical. personas carries exactly the two skills that exercise both bifurcation halves: security-audit (capability, with gated bridge) and warden (disposition, governance posture)."
+}

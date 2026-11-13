@@ -1,0 +1,67 @@
+{
+  "name": "illuci",
+  "version": "6.5.9-alpha",
+  "description": "Model-agnostic agent execution and orchestration engine.",
+  "type": "module",
+  "bin": {
+    "illuci": "./cli/illuci.mjs"
+  },
+  "scripts": {
+    "illuci": "node cli/illuci.mjs",
+    "smoke:help": "node cli/illuci.mjs --help",
+    "smoke:topologies": "node cli/illuci.mjs topologies",
+    "smoke:matrix": "node cli/illuci.mjs matrix",
+    "test:agent": "node --test core/agent/*.test.js",
+    "test:providers": "node --test core/dispatch/retry.test.js core/bridges/grok-responses.test.js && vitest run core/bridges/codex.test.js",
+    "kernel:napi:build": "node kernel/build-napi.mjs",
+    "typecheck": "tsc -p core/contracts/tsconfig.json",
+    "test:policy": "node --test tests/policy-adoption.test.mjs",
+    "test:node": "node --test core/agent/*.test.js core/context/admitted-memory-context.test.js core/context/protected-memory-admission.test.js core/context/execution-trace.test.js core/bridges/trace-exposure.test.js core/bridges/grok-responses.test.js core/bridges/tool-paths.test.js core/dispatch/retry.test.js core/governance/desktop-focus-release.test.js core/projects/observed-record-transport.test.mjs core/roles/skill-frameworks/catalog.test.js core/roles/skill-frameworks/evolution-loop.test.js core/roles/skill-frameworks/frame.test.js tests/policy-adoption.test.mjs core/gates/approval-response.test.js core/gates/approval-scope-provenance.test.js core/gates/bridge-gate.audit.test.js core/mcp/audit-wrapper.test.js core/mcp/audit-boundary.test.js core/mcp/audit-stdio.test.js core/decisions/logger.test.js core/bridges/model-discovery.test.js core/bridges/model-discovery.gradeError.test.js core/preflight/preflight.test.js core/agents/disposition-identity.test.js core/bridges/grok-acp-client.test.mjs core/governance/commit-signing.test.js core/awareness/assignment.test.js core/awareness/references.test.js core/awareness/instance-reference.test.js core/orchestrate/spawn.assignment.test.js",
+    "test:integration": "vitest run core/bridges/codex.test.js core/topologies/runner.agent-continuity.test.js tests/project-attribution.test.mjs",
+    "test": "npm run typecheck && npm run test:node && npm run test:integration"
+  },
+  "dependencies": {
+    "@openai/codex-sdk": "^0.144.1",
+    "better-sqlite3": "^12.11.1",
+    "ink": "^6.8.0",
+    "ink-spinner": "^5.0.0",
+    "ink-text-input": "^6.0.0",
+    "openai": "^6.45.0",
+    "react": "^19.2.4",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "^26.0.1",
+    "typescript": "^6.0.3",
+    "vitest": "^3.2.4"
+  },
+  "packageManager": "npm@11.12.1",
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  },
+  "files": [
+    "cli/",
+    "core/",
+    "kernel/",
+    "README.md",
+    "CONTRIBUTING.md",
+    "THIRD_PARTY_NOTICES.md",
+    "!**/*.test.*",
+    "!**/*.fixture.*",
+    "!**/*.smoke.*",
+    "!**/*.jsonl",
+    "!**/*.sqlite*",
+    "!**/*.db",
+    "!**/audit/*.json",
+    "docs/",
+    "examples/",
+    "VERSION"
+  ],
+  "optionalDependencies": {
+    "@duckdb/node-api": "^1.5.4-r.1",
+    "sqlite-vec": "^0.1.9"
+  },
+  "private": true,
+  "license": "GPL-3.0-only"
+}

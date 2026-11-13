@@ -1,0 +1,15 @@
+node_modules/
+.illuci/
+.env
+.env.*
+!.env.example
+coverage/
+*.log
+kernel/target/
+*.node
+
+/data/
+/core/governance/compiler/audit/*.jsonl
+*.sqlite
+*.sqlite-*
+*.db

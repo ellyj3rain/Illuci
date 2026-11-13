@@ -1,0 +1,6 @@
+[workspace]
+resolver = "2"
+members = ["persona-kernel", "persona-kernel-napi"]
+
+# illuci persona-kernel workspace (DR-161, [A71] Phase-1 scaffold; [A82] Phase-B1
+# napi Tier-1 addon per ADR-07).

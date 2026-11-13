@@ -1,0 +1,147 @@
+{
+  "format": "ground-zero.policy-source/1",
+  "project": "Ground Zero",
+  "documents": [
+    {
+      "path": "constitutional/CONSTITUTION.md",
+      "sha256": "cca516a34369c3b7d6f3ce5e28829164e7280e50ced7940e61cd10be630bf1b5"
+    },
+    {
+      "path": "constitutional/BILL_OF_STANDARDS.md",
+      "sha256": "99e1c00671a4d6616f9a2773ae9ec8501917732dcc5a4794cd96374814b1251c"
+    }
+  ],
+  "provisions": [
+    {
+      "id": "article-i",
+      "source": "constitutional/BILL_OF_STANDARDS.md#article-i-human-intent-and-responsible-agency",
+      "title": "Article I: Human intent and responsible agency"
+    },
+    {
+      "id": "article-ii",
+      "source": "constitutional/BILL_OF_STANDARDS.md#article-ii-explicit-promises-and-accountable-enforcement",
+      "title": "Article II: Explicit promises and accountable enforcement"
+    },
+    {
+      "id": "article-iii",
+      "source": "constitutional/BILL_OF_STANDARDS.md#article-iii-grounded-acceleration",
+      "title": "Article III: Grounded acceleration"
+    },
+    {
+      "id": "article-iv",
+      "source": "constitutional/BILL_OF_STANDARDS.md#article-iv-documentation-as-operative-source",
+      "title": "Article IV: Documentation as operative source"
+    },
+    {
+      "id": "article-v",
+      "source": "constitutional/BILL_OF_STANDARDS.md#article-v-verified-outcomes",
+      "title": "Article V: Verified outcomes"
+    },
+    {
+      "id": "article-vi",
+      "source": "constitutional/BILL_OF_STANDARDS.md#article-vi-independent-challenge-and-correction",
+      "title": "Article VI: Independent challenge and correction"
+    },
+    {
+      "id": "article-vii",
+      "source": "constitutional/BILL_OF_STANDARDS.md#article-vii-applicable-obligations-at-the-effect-boundary",
+      "title": "Article VII: Applicable obligations at the effect boundary"
+    },
+    {
+      "id": "article-viii",
+      "source": "constitutional/BILL_OF_STANDARDS.md#article-viii-transparent-method-and-faithful-attribution",
+      "title": "Article VIII: Transparent method and faithful attribution"
+    },
+    {
+      "id": "article-ix",
+      "source": "constitutional/BILL_OF_STANDARDS.md#article-ix-private-data-and-secret-custody",
+      "title": "Article IX: Private data and secret custody"
+    },
+    {
+      "id": "standard-1",
+      "source": "constitutional/BILL_OF_STANDARDS.md#standard-1-scope-and-delegation",
+      "title": "Standard 1: Scope and delegation"
+    },
+    {
+      "id": "standard-2",
+      "source": "constitutional/BILL_OF_STANDARDS.md#standard-2-registered-invariants",
+      "title": "Standard 2: Registered invariants"
+    },
+    {
+      "id": "standard-3",
+      "source": "constitutional/BILL_OF_STANDARDS.md#standard-3-purpose-architecture-and-implementation",
+      "title": "Standard 3: Purpose, architecture and implementation"
+    },
+    {
+      "id": "standard-4",
+      "source": "constitutional/BILL_OF_STANDARDS.md#standard-4-failure-and-propagation",
+      "title": "Standard 4: Failure and propagation"
+    },
+    {
+      "id": "standard-5",
+      "source": "constitutional/BILL_OF_STANDARDS.md#standard-5-specification-and-current-state",
+      "title": "Standard 5: Specification and current state"
+    },
+    {
+      "id": "standard-6",
+      "source": "constitutional/BILL_OF_STANDARDS.md#standard-6-verification-and-evidence-applicability",
+      "title": "Standard 6: Verification and evidence applicability"
+    },
+    {
+      "id": "standard-7",
+      "source": "constitutional/BILL_OF_STANDARDS.md#standard-7-applicable-regulatory-and-contractual-constraints",
+      "title": "Standard 7: Applicable regulatory and contractual constraints"
+    },
+    {
+      "id": "standard-8",
+      "source": "constitutional/BILL_OF_STANDARDS.md#standard-8-method-and-data-provenance",
+      "title": "Standard 8: Method and data provenance"
+    },
+    {
+      "id": "standard-9",
+      "source": "constitutional/BILL_OF_STANDARDS.md#standard-9-reproduction-and-uncertainty",
+      "title": "Standard 9: Reproduction and uncertainty"
+    },
+    {
+      "id": "standard-10",
+      "source": "constitutional/BILL_OF_STANDARDS.md#standard-10-continuous-evaluation-and-correction",
+      "title": "Standard 10: Continuous evaluation and correction"
+    },
+    {
+      "id": "standard-11",
+      "source": "constitutional/BILL_OF_STANDARDS.md#standard-11-memory-and-continuity",
+      "title": "Standard 11: Memory and continuity"
+    },
+    {
+      "id": "standard-12",
+      "source": "constitutional/BILL_OF_STANDARDS.md#standard-12-repository-and-source-authority",
+      "title": "Standard 12: Repository and source authority"
+    },
+    {
+      "id": "standard-13",
+      "source": "constitutional/BILL_OF_STANDARDS.md#standard-13-odometer-and-once-only-credit",
+      "title": "Standard 13: Odometer and once-only credit"
+    },
+    {
+      "id": "standard-14",
+      "source": "constitutional/BILL_OF_STANDARDS.md#standard-14-coherent-responsibilities-and-work",
+      "title": "Standard 14: Coherent responsibilities and work"
+    },
+    {
+      "id": "standard-15",
+      "source": "constitutional/BILL_OF_STANDARDS.md#standard-15-attribution-and-participant-identity",
+      "title": "Standard 15: Attribution and participant identity"
+    },
+    {
+      "id": "standard-16",
+      "source": "constitutional/BILL_OF_STANDARDS.md#standard-16-tool-and-runtime-boundaries",
+      "title": "Standard 16: Tool and runtime boundaries"
+    },
+    {
+      "id": "standard-17",
+      "source": "constitutional/BILL_OF_STANDARDS.md#standard-17-independent-release-and-adoption",
+      "title": "Standard 17: Independent release and adoption"
+    }
+  ],
+  "sourceRevision": "sha256:8557ed1c7c7b2b14014abe90d23d6ba9d7978fe5c528780a7284a18b7145ff13"
+}

@@ -1,0 +1,13 @@
+#!/bin/sh
+# GZDS/illuci author-time commit-message hook.
+#
+# pre-commit sees the content diff. commit-msg sees the commit subject. Keep
+# these hooks separate so batch-prefix discipline is enforced at the boundary
+# that actually owns it.
+
+REPO_ROOT=$(git rev-parse --show-toplevel)
+MSG_FILE="$1"
+HOOK_DIR=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+
+node "$HOOK_DIR/../commit-message-cli.mjs" "$MSG_FILE"
+exit $?

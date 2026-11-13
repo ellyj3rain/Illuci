@@ -1,0 +1,62 @@
+{
+  "schema": "illuci.policy-correspondence/1",
+  "sourceProject": "Ground Zero",
+  "sourceRevision": "sha256:8557ed1c7c7b2b14014abe90d23d6ba9d7978fe5c528780a7284a18b7145ff13",
+  "selection": "independently published Ground Zero source explicitly received by the Illuci candidate",
+  "sourceOwnership": "Ground Zero owns its Constitution, Bill and methods. Illuci owns these runtime adaptations and observations. The source snapshot is immutable attribution, not a maintained duplicate Constitution or an authority grant.",
+  "provisions": [
+    {
+      "id": "standard-6",
+      "consumer": "core/governance/injector.js + compiled/carried-manifest.json",
+      "tier": "carried",
+      "behavior": "selected verification/evidence applicability instruction reaches non-raw model input",
+      "limit": "the instruction does not execute tests or establish result truth"
+    },
+    {
+      "id": "standard-10",
+      "consumer": "core/agent/loop.js, core/roles/operator-concept-steward.js, core/resilience/",
+      "tier": "carried + observed runtime mechanisms",
+      "behavior": "review can cause one correction turn; response/latency outcomes update implemented adaptive routing components",
+      "limit": "streaming does not feed every reliability counter; no automatic source updater shipped"
+    },
+    {
+      "id": "standard-11",
+      "consumer": "core/context/admitted-memory-context.js, core/agent/loop.js, core/sessions/record.js, core/topologies/runner.js",
+      "tier": "host admission + consumed context + retained observations",
+      "behavior": "host-admitted memory is fresh per turn; retained session/agent observations can feed later topology frames",
+      "limit": "no identity authorization is inferred from a path, label or checksum"
+    },
+    {
+      "id": "standard-14",
+      "consumer": "core/governance/compiler/runtime/dispatch-bridge.js, compiled/gate/std-14.modularity.creation-fit.js",
+      "tier": "hard, pre-dispatch when selected",
+      "behavior": "selected consequential creation requires current source-fit facts and existing responsibility inadequacy",
+      "limit": "ordinary missing Bill behavior and optional soft verification remain separately documented"
+    },
+    {
+      "id": "standard-16",
+      "consumer": "core/gates/, core/mcp/permission-context.js, core/bridges/tools.js",
+      "tier": "actual tool boundary",
+      "behavior": "tool permission, allowlist and workspace checks retain their source-owned meanings",
+      "limit": "read-shaped metadata or a record does not supply a new grant"
+    },
+    {
+      "id": "standard-13",
+      "consumer": "core/governance/authortime/ceiling/elevation.js",
+      "tier": "pure recommendation",
+      "behavior": "dependency reach does not elevate version credit; explicit evidenced scope distinguishes correction, increment, completed feature and operator-selected completed group",
+      "limit": "record presence does not verify facts or authenticate authority; no version is changed by the classifier"
+    },
+    {
+      "id": "standard-15",
+      "consumer": "CONTRIBUTING.md and public Git/PR/release metadata review",
+      "tier": "contribution and publication control",
+      "behavior": "public attribution centers the human and developed system without provider/model coauthors or generated-by labels",
+      "limit": "functional compatibility identifiers, required legal notices and relevant technical provenance remain accurate; this statement is not universal runtime prevention"
+    }
+  ],
+  "reciprocalChange": "Engine findings can propose a Ground Zero source revision; both repositories independently review and receive the change.",
+  "sourceRepository": "https://github.com/ellyj3rain/Ground_Zero",
+  "sourceCommit": "35843eea8ff9be4ba184a2cd49cc0fcd7f347951",
+  "sourcePublication": "Ground Zero independently published and received; this manifest binds its immutable source without merging project ownership"
+}

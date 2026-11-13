@@ -1,0 +1,5 @@
+{
+  "schema": "illuci.governance.declaration-floor-pins/1",
+  "comment": "Operator-ratified exemptions for known-dark declarations (DR-190). Every pin prints as PINNED-DARK on every gate run; a pin whose subject comes alive is a STALE PIN and FAILS the gate. Pins exceeding KILL_RATIO (0.1) of checked surfaces DISARM the floor by design. Treat this file as an attack surface: a stale pin hiding a live path is a governance lie.",
+  "pins": []
+}

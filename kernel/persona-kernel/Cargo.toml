@@ -1,0 +1,10 @@
+[package]
+name = "persona-kernel"
+version = "0.1.0"
+edition = "2021"
+publish = false
+description = "illuci persona kernel — domain-agnostic fixed-point persona core (DR-161 ADR pack). Confound guard (ADR-01): no domain/facet string literal in src."
+
+[lib]
+name = "persona_kernel"
+path = "src/lib.rs"
