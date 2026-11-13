@@ -28,12 +28,12 @@
     "ink-text-input": "^6.0.0",
     "openai": "^6.45.0",
     "react": "^19.2.4",
-    "zod": "^4.4.3"
+    "zod": "^4.6.6"
   },
   "devDependencies": {
     "@types/node": "^26.0.1",
     "typescript": "^6.0.3",
-    "vitest": "^3.2.4"
+    "vitest": "^4.1.12"
   },
   "packageManager": "npm@11.12.1",
   "engines": {

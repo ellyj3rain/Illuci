@@ -11,12 +11,12 @@ Illuci's original selected source is distributed under GPL-3.0-only. The depende
 | ink-text-input | 6.0.0 | MIT | dependencies |
 | openai | 6.45.0 | Apache-2.0 | dependencies |
 | react | 19.2.7 | MIT | dependencies |
-| zod | 4.4.3 | MIT | dependencies |
+| zod | 4.6.6 | MIT | dependencies |
 | @duckdb/node-api | 1.5.4-r.1 | MIT | optionalDependencies |
 | sqlite-vec | 0.1.9 | MIT OR Apache | optionalDependencies |
 | @types/node | 26.0.1 | MIT | devDependencies |
 | typescript | 6.0.3 | Apache-2.0 | devDependencies |
-| vitest | 3.2.6 | MIT | devDependencies |
+| vitest | 4.1.12 | MIT | devDependencies |
 
 The optional Rust persona component uses the separately declared crates in its Cargo manifests and lockfile, including the N-API bindings where selected. Preserve their upstream notices when distributing a built artifact. Provider executables and services remain separate installations under their own terms.
 
